@@ -1,0 +1,64 @@
+//Practice using prompt, confirm, and alert try the following. You may want to look //them up on MDN.
+//Ask the user for the their firstName. Then alert it.
+//Ask the user "have we met before?". If true then respond "nice to meet you".
+
+haveMet=prompt("Have we met before?");
+if(haveMet === 'Yes') {
+    alert("Nice to meet you");
+}
+
+
+//Get the temperature from the user and alert it back in Celsius.
+
+degInF = prompt("What is the temprature in F?");
+alert("The temperature is " + (degInF-32/9*5) + "C");
+
+
+//Confirm if a user has three friends? Use a loop and prompt to collect the names //of the friends. Alert back the names of the friends.
+
+var friends = confirm('Do you have 3 friends?');
+var names = [];
+if(friends) {
+    for (i=0;i<3;i++) names[i]=prompt("whats your friends name?");
+
+}
+alert(names)
+
+//Prompt the user to give a word. Then alert back the number of vowels.
+
+word = prompt("enter a word");
+alert(word.match(/[aeiou]/g).length);
+
+
+//Write a loop to solve the following riddle. I am a number between 2 and 100. I am //even and a multiple of 3. I end in 2. My digits sum to 9.
+
+for(i=2; i <= 100; i++) {
+    if(i%2 === 0){
+        if(i%3 === 0){
+            if(i.toString()[1] === "2"){
+                if(Number(i.toString()[0]) + Number(i.toString()[1]) === 9) {
+                    console.log(i);
+                    }
+    
+                }
+            }
+        }
+    }
+
+
+
+//Hard: Generate a random number between 1 and 100, an integer and not a float. //Prompt the user to guess the number. Continue prompting the user for a guess //using a loop, telling them each time if the number is lower or higher. Alert //correct when they guess the number.
+
+
+number = Math.floor(Math.random()*100);
+console.log(number);
+guess = prompt("Guess a number between 1 and 100!");
+while( guess !== number.toString()){
+    if(number < guess) alert("Wrong! Guess Lower");
+    if(number > guess) alert("Wrong! Guess higher!");
+    guess = prompt("Guess a number between 1 and 100!");
+}
+alert("You got it!");
+
+
+
